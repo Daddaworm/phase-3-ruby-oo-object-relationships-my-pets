@@ -48,6 +48,7 @@ class Owner
 
 
   def dogs 
+    # returnsa a collection of all the dogs that belong to the owner
     Dog.all.select do |dog|
       dog.owner == self
       # binding.pry
@@ -63,6 +64,8 @@ class Owner
 
 
   def buy_dog(name)
+    # can buy a dog that is an instance of the Dog class
+    # knows about its dogs
     Dog.new(name, self)
   end
 
@@ -97,6 +100,7 @@ class Owner
 
 
   def list_pets
+    # can list off its pets
    "I have #{self.dogs.count} dog(s), and #{self.dogs.count} cat(s)."
   end
 
